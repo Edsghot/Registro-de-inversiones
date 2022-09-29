@@ -14,7 +14,7 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
 
-public class login extends JFrame {
+public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -27,7 +27,7 @@ public class login extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					login frame = new login();
+					Login frame = new Login();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +39,7 @@ public class login extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public login() {
+	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 416, 397);
 		contentPane = new JPanel();
@@ -47,39 +47,40 @@ public class login extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Usuario:");
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(76, 192, 77, 26);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("Contraseña:");
+		JLabel lblNewLabel_1 = new JLabel("Contrase\u00F1a:");
 		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setBounds(47, 230, 106, 26);
+		lblNewLabel_1.setBounds(50, 217, 106, 26);
 		contentPane.add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setBounds(156, 196, 135, 26);
+		textField.setBounds(156, 182, 150, 26);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(156, 231, 135, 26);
+		passwordField.setBounds(156, 219, 150, 26);
 		contentPane.add(passwordField);
 		
 		JButton btnNewButton = new JButton("Iniciar");
-		btnNewButton.setBounds(168, 286, 92, 25);
+		btnNewButton.setBounds(184, 270, 92, 25);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Registrarse");
-		btnNewButton_1.setBounds(152, 323, 117, 25);
+		btnNewButton_1.setBounds(174, 316, 117, 25);
 		contentPane.add(btnNewButton_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Usuario:");
+		lblNewLabel_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblNewLabel_1_1.setBounds(76, 180, 70, 26);
+		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("fondo");
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblNewLabel_2.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel_2.setIcon(new ImageIcon("/home/edsghot/UNIVERSIDAD/5to semestre/ingenieria de software I/proyecto personal/codigo_java/src/img/fondo.png"));
-		lblNewLabel_2.setBounds(0, -11, 414, 381);
+		lblNewLabel_2.setIcon(new ImageIcon(Login.class.getResource("/img/fondo.png")));
+		lblNewLabel_2.setBounds(0, -23, 414, 381);
 		contentPane.add(lblNewLabel_2);
 	}
 }

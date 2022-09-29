@@ -8,11 +8,18 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.JButton;
 
 public class Registrar extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtRegistrarNombre;
+	private JTextField txtNombre;
+	private JTextField txtApellido;
+	private JTextField txtCorreo;
+	private JTextField txtTelefono;
+	private JTextField txtDni;
+	private JTextField txtEdad;
 
 	/**
 	 * Launch the application.
@@ -35,41 +42,79 @@ public class Registrar extends JFrame {
 	 */
 	public Registrar() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 501, 459);
+		setBounds(100, 100, 415, 437);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Nombre:");
-		lblNewLabel.setBounds(105, 111, 70, 15);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel.setBounds(84, 75, 77, 22);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblApellido = new JLabel("Apellido:");
-		lblApellido.setBounds(105, 138, 70, 34);
-		contentPane.add(lblApellido);
+		JLabel lblNewLabel_1 = new JLabel("Apellido:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_1.setBounds(84, 116, 77, 22);
+		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblCorreoElectronico = new JLabel("Correo electronico:");
-		lblCorreoElectronico.setBounds(28, 184, 147, 15);
-		contentPane.add(lblCorreoElectronico);
+		JLabel lblNewLabel_1_1 = new JLabel("Correo electronico:");
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_1_1.setBounds(10, 160, 141, 22);
+		contentPane.add(lblNewLabel_1_1);
 		
-		JLabel lblNTelefono = new JLabel("N° Telefono:");
-		lblNTelefono.setBounds(79, 222, 96, 15);
-		contentPane.add(lblNTelefono);
+		JLabel lblNewLabel_1_2 = new JLabel("N\u00BA Telefono:");
+		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_1_2.setBounds(55, 202, 106, 22);
+		contentPane.add(lblNewLabel_1_2);
 		
-		JLabel lblDni = new JLabel("DNI:");
-		lblDni.setBounds(139, 259, 70, 15);
-		contentPane.add(lblDni);
+		JLabel lblNewLabel_1_3 = new JLabel("DNI:");
+		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_1_3.setBounds(106, 235, 45, 37);
+		contentPane.add(lblNewLabel_1_3);
 		
-		JLabel lblEdad = new JLabel("Edad:");
-		lblEdad.setBounds(127, 290, 70, 15);
-		contentPane.add(lblEdad);
+		JLabel lblNewLabel_1_4 = new JLabel("Edad:");
+		lblNewLabel_1_4.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_1_4.setBounds(98, 283, 54, 22);
+		contentPane.add(lblNewLabel_1_4);
 		
-		txtRegistrarNombre = new JTextField();
-		txtRegistrarNombre.setText("registrar nombre");
-		txtRegistrarNombre.setBounds(178, 109, 114, 19);
-		contentPane.add(txtRegistrarNombre);
-		txtRegistrarNombre.setColumns(10);
+		txtNombre = new JTextField();
+		txtNombre.setBounds(158, 78, 132, 20);
+		contentPane.add(txtNombre);
+		txtNombre.setColumns(10);
+		
+		txtApellido = new JTextField();
+		txtApellido.setColumns(10);
+		txtApellido.setBounds(158, 119, 132, 20);
+		contentPane.add(txtApellido);
+		
+		txtCorreo = new JTextField();
+		txtCorreo.setColumns(10);
+		txtCorreo.setBounds(158, 163, 132, 20);
+		contentPane.add(txtCorreo);
+		
+		txtTelefono = new JTextField();
+		txtTelefono.setColumns(10);
+		txtTelefono.setBounds(158, 205, 132, 20);
+		contentPane.add(txtTelefono);
+		
+		txtDni = new JTextField();
+		txtDni.setColumns(10);
+		txtDni.setBounds(158, 245, 132, 20);
+		contentPane.add(txtDni);
+		
+		txtEdad = new JTextField();
+		txtEdad.setColumns(10);
+		txtEdad.setBounds(158, 286, 132, 20);
+		contentPane.add(txtEdad);
+		
+		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.setBounds(84, 343, 89, 23);
+		contentPane.add(btnRegistrar);
+		
+		JButton btnCancelar = new JButton("cancelar");
+		btnCancelar.setBounds(216, 343, 89, 23);
+		contentPane.add(btnCancelar);
 	}
-
 }
+
