@@ -10,6 +10,8 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class mostrar extends JFrame {
 
@@ -48,6 +50,37 @@ public class mostrar extends JFrame {
 		panel.setBounds(31, 26, 448, 354);
 		contentPane.add(panel);
 		panel.setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
+		panel_1.setBounds(10, 11, 428, 332);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblBienvenido = new JLabel("BIENVENIDO  ____________");
+		lblBienvenido.setFont(new Font("Tw Cen MT", Font.BOLD, 18));
+		lblBienvenido.setBounds(74, 23, 260, 14);
+		panel_1.add(lblBienvenido);
+		
+		JButton btnNewButton_1 = new JButton("Buscar Inversion");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_1.setBounds(116, 73, 169, 38);
+		panel_1.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("REGISTRAR");
+		btnNewButton_2.setBounds(116, 134, 169, 38);
+		panel_1.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("VER EMPRESAS");
+		btnNewButton_3.setBounds(116, 194, 169, 40);
+		panel_1.add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("Salir");
+		btnNewButton_4.setBounds(329, 292, 89, 29);
+		panel_1.add(btnNewButton_4);
 		
 		JLabel lblNewLabel = new JLabel("DATOS DE USUARIO");
 		lblNewLabel.setFont(new Font("Tw Cen MT", Font.BOLD, 14));
