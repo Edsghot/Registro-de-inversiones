@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Models.conexion;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -16,6 +19,7 @@ import java.awt.event.ActionEvent;
 public class mostrar extends JFrame {
 
 	private JPanel contentPane;
+
 
 	/**
 	 * Launch the application.
@@ -37,7 +41,6 @@ public class mostrar extends JFrame {
 	 * Create the frame.
 	 */
 	public mostrar() {
-		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 518, 449);
 		contentPane = new JPanel();
@@ -53,9 +56,9 @@ public class mostrar extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("BIEVENIDO ");
+		JLabel lblNewLabel_1 = new JLabel("BIEVENIDO "+Login.co.mostrar()[5]);
 		lblNewLabel_1.setFont(new Font("Tw Cen MT", Font.BOLD, 22));
-		lblNewLabel_1.setBounds(79, 30, 273, 30);
+		lblNewLabel_1.setBounds(103, 30, 273, 30);
 		panel_1.add(lblNewLabel_1);
 		
 		JButton btnNewButton_1 = new JButton("Buscar Registro");
@@ -80,6 +83,7 @@ public class mostrar extends JFrame {
 		JButton btnNewButton_1_1 = new JButton("Registrar");
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			
 					dispose();
 					try {
 						inversion frame = new inversion();
@@ -93,10 +97,6 @@ public class mostrar extends JFrame {
 		});
 		btnNewButton_1_1.setBounds(130, 174, 166, 51);
 		panel_1.add(btnNewButton_1_1);
-		
-		JButton btnNewButton_1_2 = new JButton("Ver empresas");
-		btnNewButton_1_2.setBounds(130, 255, 166, 51);
-		panel_1.add(btnNewButton_1_2);
 		
 		JButton btnNewButton_2 = new JButton("Salir");
 		btnNewButton_2.addActionListener(new ActionListener() {
@@ -156,30 +156,31 @@ public class mostrar extends JFrame {
 		btnNewButton.setBounds(321, 306, 97, 26);
 		panel.add(btnNewButton);
 		
-		JLabel lblNombre_1 = new JLabel("____________________");
-		lblNombre_1.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
-		lblNombre_1.setBounds(172, 92, 246, 26);
-		panel.add(lblNombre_1);
+		JLabel lblNombres = new JLabel(Login.co.mostrar()[0]);
+		lblNombres.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
+		lblNombres.setBounds(172, 80, 246, 26);
+		panel.add(lblNombres);
 		
-		JLabel lblNombre_1_1 = new JLabel("____________________");
-		lblNombre_1_1.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
-		lblNombre_1_1.setBounds(172, 116, 246, 26);
-		panel.add(lblNombre_1_1);
+		JLabel lblApellidos = new JLabel(Login.co.mostrar()[1]);
+		lblApellidos.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
+		lblApellidos.setBounds(172, 116, 246, 26);
+		panel.add(lblApellidos);
 		
-		JLabel lblNombre_1_2 = new JLabel("____________________");
-		lblNombre_1_2.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
-		lblNombre_1_2.setBounds(172, 153, 246, 26);
-		panel.add(lblNombre_1_2);
+		JLabel lblCorreo = new JLabel(Login.co.mostrar()[2]);
+		lblCorreo.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
+		lblCorreo.setBounds(172, 153, 246, 26);
+		panel.add(lblCorreo);
 		
-		JLabel lblNombre_1_3 = new JLabel("____________________");
-		lblNombre_1_3.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
-		lblNombre_1_3.setBounds(172, 197, 246, 26);
-		panel.add(lblNombre_1_3);
+		JLabel lblDnis = new JLabel(Login.co.mostrar()[3]);
+		lblDnis.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
+		lblDnis.setBounds(172, 197, 246, 26);
+		panel.add(lblDnis);
 		
-		JLabel lblNombre_1_4 = new JLabel("____________________");
-		lblNombre_1_4.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
-		lblNombre_1_4.setBounds(165, 241, 246, 26);
-		panel.add(lblNombre_1_4);
+		JLabel lblTelefonos = new JLabel(Login.co.mostrar()[4]);
+		lblTelefonos.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
+		lblTelefonos.setBounds(165, 241, 246, 26);
+		panel.add(lblTelefonos);
+		
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

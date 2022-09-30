@@ -27,7 +27,6 @@ public class Registrar extends JFrame {
 	private JTextField txtEdad;
 	private JTextField txtUsuario;
 	private JTextField txtContraseña;
-
 	
 
 	/**
@@ -51,7 +50,7 @@ public class Registrar extends JFrame {
 	 * Create the frame.
 	 */
 	public Registrar() {
-		Login.co.conexionBS();
+
 		setResizable(false);
 		setAutoRequestFocus(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -124,22 +123,27 @@ public class Registrar extends JFrame {
 		
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.addActionListener(new ActionListener() {
-			conexion cn = new conexion();
-			cn.conexionDB();
-			
-			
 			public void actionPerformed(ActionEvent e) {
-				dispose();
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							mostrar frame = new mostrar();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
+				
+				boolean band = Login.co.registrar(txtUsuario.getText(), txtContraseña.getText(), txtNombre.getText(), txtApellido.getText(),txtCorreo.getText(), txtTelefono.getText(), txtTelefono.getText(), Integer.parseInt(txtEdad.getText()));
+				
+				if(band) {
+					dispose();
+					EventQueue.invokeLater(new Runnable() {
+						public void run() {
+							try {
+								mostrar frame = new mostrar();
+								frame.setVisible(true);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
 						}
-					}
-				});	
+					});	
+				}else {
+					System.out.println("Ya existe esta registrado, revise si ingreso bien los datos");
+				}
+								
+				
 			}
 			
 		});

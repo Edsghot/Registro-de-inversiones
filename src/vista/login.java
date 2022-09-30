@@ -80,7 +80,17 @@ public class Login extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				if(co.getLogin(txtUsuario.getText(), password.getText())) {
-					
+					dispose();
+					EventQueue.invokeLater(new Runnable() {
+						public void run() {
+							try {
+								mostrar frame = new mostrar();
+								frame.setVisible(true);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						}
+					});
 				}else {
 					txtUsuario.setText("Incorrecta!!");
 				}
