@@ -37,6 +37,7 @@ public class mostrar extends JFrame {
 	 * Create the frame.
 	 */
 	public mostrar() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 518, 449);
 		contentPane = new JPanel();
@@ -45,42 +46,77 @@ public class mostrar extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
+		panel_1.setVisible(false);
+		panel_1.setBounds(31, 25, 449, 360);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("BIEVENIDO ");
+		lblNewLabel_1.setFont(new Font("Tw Cen MT", Font.BOLD, 22));
+		lblNewLabel_1.setBounds(79, 30, 273, 30);
+		panel_1.add(lblNewLabel_1);
+		
+		JButton btnNewButton_1 = new JButton("Buscar Registro");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Buscar frame = new Buscar();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btnNewButton_1.setBounds(130, 95, 166, 51);
+		panel_1.add(btnNewButton_1);
+		
+		JButton btnNewButton_1_1 = new JButton("Registrar");
+		btnNewButton_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					dispose();
+					try {
+						inversion frame = new inversion();
+						frame.setVisible(true);
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				
+			}
+			
+		});
+		btnNewButton_1_1.setBounds(130, 174, 166, 51);
+		panel_1.add(btnNewButton_1_1);
+		
+		JButton btnNewButton_1_2 = new JButton("Ver empresas");
+		btnNewButton_1_2.setBounds(130, 255, 166, 51);
+		panel_1.add(btnNewButton_1_2);
+		
+		JButton btnNewButton_2 = new JButton("Salir");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnNewButton_2.setBounds(346, 327, 89, 23);
+		panel_1.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Ver datos");
+		
+		btnNewButton_3.setBounds(20, 327, 89, 23);
+		panel_1.add(btnNewButton_3);
+		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
 		panel.setBounds(31, 26, 448, 354);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(10, 11, 428, 332);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JLabel lblBienvenido = new JLabel("BIENVENIDO  ____________");
-		lblBienvenido.setFont(new Font("Tw Cen MT", Font.BOLD, 18));
-		lblBienvenido.setBounds(74, 23, 260, 14);
-		panel_1.add(lblBienvenido);
-		
-		JButton btnNewButton_1 = new JButton("Buscar Inversion");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_1.setBounds(116, 73, 169, 38);
-		panel_1.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("REGISTRAR");
-		btnNewButton_2.setBounds(116, 134, 169, 38);
-		panel_1.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("VER EMPRESAS");
-		btnNewButton_3.setBounds(116, 194, 169, 40);
-		panel_1.add(btnNewButton_3);
-		
-		JButton btnNewButton_4 = new JButton("Salir");
-		btnNewButton_4.setBounds(329, 292, 89, 29);
-		panel_1.add(btnNewButton_4);
 		
 		JLabel lblNewLabel = new JLabel("DATOS DE USUARIO");
 		lblNewLabel.setFont(new Font("Tw Cen MT", Font.BOLD, 14));
@@ -113,6 +149,7 @@ public class mostrar extends JFrame {
 		panel.add(lblNTelefono);
 		
 		JButton btnNewButton = new JButton("Siguiente");
+		
 		btnNewButton.setBackground(Color.LIGHT_GRAY);
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -121,7 +158,7 @@ public class mostrar extends JFrame {
 		
 		JLabel lblNombre_1 = new JLabel("____________________");
 		lblNombre_1.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
-		lblNombre_1.setBounds(172, 80, 246, 26);
+		lblNombre_1.setBounds(172, 92, 246, 26);
 		panel.add(lblNombre_1);
 		
 		JLabel lblNombre_1_1 = new JLabel("____________________");
@@ -143,5 +180,18 @@ public class mostrar extends JFrame {
 		lblNombre_1_4.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 21));
 		lblNombre_1_4.setBounds(165, 241, 246, 26);
 		panel.add(lblNombre_1_4);
+		
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel_1.setVisible(true);
+				panel.setVisible(false);
+			}
+		});
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel.setVisible(true);
+				panel_1.setVisible(false);
+			}
+		});
 	}
 }

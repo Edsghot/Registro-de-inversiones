@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Models.conexion;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -13,12 +16,15 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	conexion co;
 
 	/**
 	 * Launch the application.
@@ -40,6 +46,8 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
+		co = new conexion();
+		co.conexionBS();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 416, 397);
 		contentPane = new JPanel();
@@ -63,10 +71,30 @@ public class Login extends JFrame {
 		contentPane.add(passwordField);
 		
 		JButton btnNewButton = new JButton("Iniciar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnNewButton.setBounds(184, 270, 92, 25);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Registrarse");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Registrar frame = new Registrar();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
 		btnNewButton_1.setBounds(174, 316, 117, 25);
 		contentPane.add(btnNewButton_1);
 		

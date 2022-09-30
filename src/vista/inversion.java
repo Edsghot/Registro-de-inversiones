@@ -13,6 +13,8 @@ import java.awt.Color;
 import javax.swing.JButton;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.Choice;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class inversion extends JFrame {
 
@@ -86,7 +88,23 @@ public class inversion extends JFrame {
 		
 		JButton btnNewButton = new JButton("Registrar");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton.setBounds(167, 276, 104, 32);
+		btnNewButton.setBounds(249, 275, 104, 32);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Regresar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+					try {
+						mostrar frame = new mostrar();
+						frame.setVisible(true);
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				}
+			
+		});
+		btnNewButton_1.setBounds(29, 282, 98, 25);
+		contentPane.add(btnNewButton_1);
 	}
 }

@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Registrar extends JFrame {
 
@@ -20,12 +22,15 @@ public class Registrar extends JFrame {
 	private JTextField txtTelefono;
 	private JTextField txtDni;
 	private JTextField txtEdad;
+	private JTextField txtUsuario;
+	private JTextField txtContraseña;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			
 			public void run() {
 				try {
 					Registrar frame = new Registrar();
@@ -41,8 +46,10 @@ public class Registrar extends JFrame {
 	 * Create the frame.
 	 */
 	public Registrar() {
+		setResizable(false);
+		setAutoRequestFocus(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 415, 437);
+		setBounds(100, 100, 412, 486);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -109,12 +116,62 @@ public class Registrar extends JFrame {
 		contentPane.add(txtEdad);
 		
 		JButton btnRegistrar = new JButton("Registrar");
-		btnRegistrar.setBounds(84, 343, 89, 23);
+		btnRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							mostrar frame = new mostrar();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});	
+			}
+		});
+		btnRegistrar.setBounds(89, 391, 89, 23);
 		contentPane.add(btnRegistrar);
 		
 		JButton btnCancelar = new JButton("cancelar");
-		btnCancelar.setBounds(216, 343, 89, 23);
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Login frame = new Login();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btnCancelar.setBounds(220, 391, 89, 23);
 		contentPane.add(btnCancelar);
+		
+		JLabel lblUsuario = new JLabel("Usuario:");
+		lblUsuario.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblUsuario.setBounds(84, 39, 77, 22);
+		contentPane.add(lblUsuario);
+		
+		txtUsuario = new JTextField();
+		txtUsuario.setBounds(158, 44, 132, 20);
+		contentPane.add(txtUsuario);
+		txtUsuario.setColumns(10);
+		
+		JLabel lblNewLabel_1_4_1 = new JLabel("Contrase\u00F1a:");
+		lblNewLabel_1_4_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_1_4_1.setBounds(55, 326, 96, 22);
+		contentPane.add(lblNewLabel_1_4_1);
+		
+		txtContraseña = new JTextField();
+		txtContraseña.setColumns(10);
+		txtContraseña.setBounds(158, 329, 132, 20);
+		contentPane.add(txtContraseña);
 	}
 }
 
