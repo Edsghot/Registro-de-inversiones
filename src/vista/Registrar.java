@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Models.conexion;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Font;
@@ -24,6 +27,8 @@ public class Registrar extends JFrame {
 	private JTextField txtEdad;
 	private JTextField txtUsuario;
 	private JTextField txtContraseña;
+
+	
 
 	/**
 	 * Launch the application.
@@ -46,6 +51,7 @@ public class Registrar extends JFrame {
 	 * Create the frame.
 	 */
 	public Registrar() {
+		Login.co.conexionBS();
 		setResizable(false);
 		setAutoRequestFocus(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -115,8 +121,13 @@ public class Registrar extends JFrame {
 		txtEdad.setBounds(158, 286, 132, 20);
 		contentPane.add(txtEdad);
 		
+		
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.addActionListener(new ActionListener() {
+			conexion cn = new conexion();
+			cn.conexionDB();
+			
+			
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				EventQueue.invokeLater(new Runnable() {
@@ -130,6 +141,7 @@ public class Registrar extends JFrame {
 					}
 				});	
 			}
+			
 		});
 		btnRegistrar.setBounds(89, 391, 89, 23);
 		contentPane.add(btnRegistrar);

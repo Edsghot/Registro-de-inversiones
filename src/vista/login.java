@@ -22,9 +22,9 @@ import java.awt.event.ActionEvent;
 public class Login extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JPasswordField passwordField;
-	conexion co;
+	private JTextField txtUsuario;
+	private JPasswordField password;
+	public static conexion co;
 
 	/**
 	 * Launch the application.
@@ -49,11 +49,16 @@ public class Login extends JFrame {
 		co = new conexion();
 		co.conexionBS();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 416, 397);
+		setBounds(100, 100, 407, 371);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("D:\\UNIVERSIDAD\\QUINTO SEMESTRE\\INGENIERIA DE SOFTWARE\\proyectos\\Registro-de-inversiones\\src\\img\\LogoUser.jpg"));
+		lblNewLabel.setBounds(187, 43, 149, 103);
+		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Contrase\u00F1a:");
 		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 14));
@@ -61,22 +66,27 @@ public class Login extends JFrame {
 		lblNewLabel_1.setBounds(50, 217, 106, 26);
 		contentPane.add(lblNewLabel_1);
 		
-		textField = new JTextField();
-		textField.setBounds(156, 182, 150, 26);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtUsuario = new JTextField();
+		txtUsuario.setBounds(156, 182, 150, 26);
+		contentPane.add(txtUsuario);
+		txtUsuario.setColumns(10);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(156, 219, 150, 26);
-		contentPane.add(passwordField);
+		password = new JPasswordField();
+		password.setBounds(156, 219, 150, 26);
+		contentPane.add(password);
 		
 		JButton btnNewButton = new JButton("Iniciar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				if(co.getLogin(txtUsuario.getText(), password.getText())) {
+					
+				}else {
+					txtUsuario.setText("Incorrecta!!");
+				}
 			}
 		});
-		btnNewButton.setBounds(184, 270, 92, 25);
+		btnNewButton.setBounds(91, 279, 92, 25);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Registrarse");
@@ -95,7 +105,7 @@ public class Login extends JFrame {
 				});
 			}
 		});
-		btnNewButton_1.setBounds(174, 316, 117, 25);
+		btnNewButton_1.setBounds(236, 279, 117, 25);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Usuario:");
@@ -108,7 +118,7 @@ public class Login extends JFrame {
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblNewLabel_2.setForeground(Color.LIGHT_GRAY);
 		lblNewLabel_2.setIcon(new ImageIcon(Login.class.getResource("/img/fondo.png")));
-		lblNewLabel_2.setBounds(0, -23, 414, 381);
+		lblNewLabel_2.setBounds(0, 0, 400, 347);
 		contentPane.add(lblNewLabel_2);
 	}
 }

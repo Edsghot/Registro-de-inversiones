@@ -3,7 +3,9 @@ package Models;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.JOptionPane;
 
@@ -45,6 +47,63 @@ public class conexion {
 		}
 	}
 	
+	public String[] empresas() {
+		
+		int c= 0;
+		String arreglo[] = new String[30];
+		
+		try {
+			Statement st = cn.createStatement();
+			ResultSet rs = st.executeQuery("SELECT * FROM empresa");
+			
+			String cadena = " ";
+			
+				while(rs.next()) {
+					
+					cadena = rs.getString(1)+"  "+rs.getString(2)+"   "+rs.getString(3);
+					arreglo[c] = cadena;
+					c++;
+					
+			}
+	
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return arreglo;
+	}
+	
+	public boolean getLogin(String usuario,String contraseña) {
+		boolean band=false;
+		
+		try {
+			Statement st = cn.createStatement();
+			ResultSet rs = st.executeQuery("SELECT * FROM usuario");
+			
+			String cadena = " ";
+			
+				while(rs.next()) {
+					
+					if(usuario.equals(rs.getString(1)) && contraseña.equals(rs.getString(2))) {
+						band = true;
+					}
+						
+				}
+	
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return band;
+	}
+	
+	public String mostrar() {
+		return "";
+	}
 	
 
 }
