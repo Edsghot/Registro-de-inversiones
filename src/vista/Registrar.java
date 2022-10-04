@@ -134,6 +134,7 @@ public class Registrar extends JFrame {
 							try {
 								mostrar frame = new mostrar();
 								frame.setVisible(true);
+								frame.setLocationRelativeTo(null);
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
@@ -159,6 +160,7 @@ public class Registrar extends JFrame {
 						try {
 							Login frame = new Login();
 							frame.setVisible(true);
+							frame.setLocationRelativeTo(null);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

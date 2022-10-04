@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
 
 public class Buscar extends JFrame {
 
@@ -28,6 +29,7 @@ public class Buscar extends JFrame {
 				try {
 					Buscar frame = new Buscar();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,9 +41,11 @@ public class Buscar extends JFrame {
 	 * Create the frame.
 	 */
 	public Buscar() {
+		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 463, 546);
+		setBounds(100, 100, 451, 524);
 		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.activeCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -57,16 +61,18 @@ public class Buscar extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Ingrese fecha( dia/mes/a\u00F1o ) registrada de la inversion:");
-		lblNewLabel_1_1.setFont(new Font("Tw Cen MT", Font.PLAIN, 16));
+		lblNewLabel_1_1.setFont(new Font("Tw Cen MT", Font.BOLD, 16));
 		lblNewLabel_1_1.setBounds(34, 125, 375, 30);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Fecha:");
-		lblNewLabel_1_1_1.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		lblNewLabel_1_1_1.setBounds(57, 163, 54, 30);
+		lblNewLabel_1_1_1.setFont(new Font("Tw Cen MT", Font.BOLD, 20));
+		lblNewLabel_1_1_1.setBounds(44, 163, 67, 30);
 		contentPane.add(lblNewLabel_1_1_1);
 		
 		JButton btnNewButton = new JButton("Buscar");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(0, 128, 128));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -79,6 +85,8 @@ public class Buscar extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setForeground(new Color(255, 255, 255));
+		btnCancelar.setBackground(new Color(0, 128, 128));
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -88,6 +96,7 @@ public class Buscar extends JFrame {
 						try {
 							mostrar frame = new mostrar();
 							frame.setVisible(true);
+							frame.setLocationRelativeTo(null);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

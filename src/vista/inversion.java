@@ -16,6 +16,7 @@ import java.awt.Choice;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
 
 public class inversion extends JFrame {
 
@@ -46,9 +47,11 @@ public class inversion extends JFrame {
 	 * Create the frame.
 	 */
 	public inversion() {
+		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 431, 391);
 		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.activeCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -105,6 +108,8 @@ public class inversion extends JFrame {
 		txtFecha.setText(fechaA);
 		
 		JButton btnNewButton = new JButton("Registrar");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(0, 128, 128));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -132,6 +137,7 @@ public class inversion extends JFrame {
 							try {
 								aviso frame = new aviso();
 								frame.setVisible(true);
+								frame.setLocationRelativeTo(null);
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
@@ -148,6 +154,8 @@ public class inversion extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Regresar");
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setBackground(new Color(0, 128, 128));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -157,6 +165,7 @@ public class inversion extends JFrame {
 					try {
 						mostrar frame = new mostrar();
 						frame.setVisible(true);
+						frame.setLocationRelativeTo(null);
 					} catch (Exception e1) {
 						e1.printStackTrace();
 					}

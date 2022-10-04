@@ -39,16 +39,18 @@ public class aviso extends JFrame {
 	 * Create the frame.
 	 */
 	public aviso() {
+		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 429, 420);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(20, 11, 369, 321);
+		panel.setBounds(34, 34, 369, 321);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -133,6 +135,8 @@ public class aviso extends JFrame {
 		panel.add(lbl7);
 		
 		JButton btnNewButton = new JButton("Aceptar");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(0, 128, 128));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -141,6 +145,7 @@ public class aviso extends JFrame {
 						try {
 							mostrar frame = new mostrar();
 							frame.setVisible(true);
+							frame.setLocationRelativeTo(null);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -148,7 +153,7 @@ public class aviso extends JFrame {
 				});
 			}
 		});
-		btnNewButton.setBounds(129, 343, 109, 27);
+		btnNewButton.setBounds(160, 367, 109, 27);
 		contentPane.add(btnNewButton);
 	}
 }

@@ -56,12 +56,14 @@ public class mostrar extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("BIEVENIDO "+Login.co.mostrar()[5]);
+		JLabel lblNewLabel_1 = new JLabel("BIEVENIDO "+(Login.co.mostrar()[5]).toUpperCase());
 		lblNewLabel_1.setFont(new Font("Tw Cen MT", Font.BOLD, 22));
-		lblNewLabel_1.setBounds(103, 30, 273, 30);
+		lblNewLabel_1.setBounds(113, 31, 273, 30);
 		panel_1.add(lblNewLabel_1);
 		
 		JButton btnNewButton_1 = new JButton("Buscar Registro");
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setBackground(new Color(0, 128, 128));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -70,6 +72,7 @@ public class mostrar extends JFrame {
 						try {
 							Buscar frame = new Buscar();
 							frame.setVisible(true);
+							frame.setLocationRelativeTo(null);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -77,10 +80,12 @@ public class mostrar extends JFrame {
 				});
 			}
 		});
-		btnNewButton_1.setBounds(130, 95, 166, 51);
+		btnNewButton_1.setBounds(130, 112, 166, 51);
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnNewButton_1_1 = new JButton("Registrar");
+		btnNewButton_1_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1_1.setBackground(new Color(0, 128, 128));
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
@@ -88,6 +93,7 @@ public class mostrar extends JFrame {
 					try {
 						inversion frame = new inversion();
 						frame.setVisible(true);
+						frame.setLocationRelativeTo(null);
 					} catch (Exception e1) {
 						e1.printStackTrace();
 					}
@@ -95,10 +101,12 @@ public class mostrar extends JFrame {
 			}
 			
 		});
-		btnNewButton_1_1.setBounds(130, 174, 166, 51);
+		btnNewButton_1_1.setBounds(130, 203, 166, 51);
 		panel_1.add(btnNewButton_1_1);
 		
 		JButton btnNewButton_2 = new JButton("Salir");
+		btnNewButton_2.setForeground(new Color(255, 255, 255));
+		btnNewButton_2.setBackground(new Color(0, 128, 128));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -108,6 +116,8 @@ public class mostrar extends JFrame {
 		panel_1.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Ver datos");
+		btnNewButton_3.setForeground(new Color(255, 255, 255));
+		btnNewButton_3.setBackground(new Color(0, 128, 128));
 		
 		btnNewButton_3.setBounds(20, 327, 89, 23);
 		panel_1.add(btnNewButton_3);
